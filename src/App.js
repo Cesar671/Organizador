@@ -1,24 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
+import Muitheme from './theme/Muitheme';
+import AsideMenu from './global/AsideMenu';
+import { Box } from '@mui/material';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Muitheme>
+      <div className="App">
+        <AsideMenu />
+        <div>
+
+        </div>
+      </div>
+    </Muitheme>
   );
 }
 
