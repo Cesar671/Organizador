@@ -1,18 +1,38 @@
-import React from 'react'
-import { Typography, IconButton, Box, useTheme } from "@mui/material"
+import React, { useEffect, useState } from 'react'
+import { Typography, Box, useTheme } from "@mui/material"
 import { ProSidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar'
-import { ArrowBack, ArrowForward, Surfing, LightMode, DarkModeOutlined, LightModeOutlined } from "@mui/icons-material"
-import { HouseOutlined, Group,EmojiEvents, Campaign, Sports  } from '@mui/icons-material';
+import { DarkModeOutlined, LightModeOutlined, Menu as MenuIcon} from "@mui/icons-material"
+import { HouseOutlined, GroupsSharp, Accessibility, SignLanguage, Campaign, SportsVolleyball, CalendarMonth,TableChart,Today,Diversity3Sharp } from '@mui/icons-material';
 import 'react-pro-sidebar/dist/css/styles.css';
 import { ModeContext } from '../theme/modeContext';
+import { Link } from 'react-router-dom';
 
+const MenuItemCustom = ({Icon, title, link, setSelected, selected}) => {
+  return (<>
+    <MenuItem
+    icon={ <Icon />}
+    onClick={ () => { 
+      const pth = window.location.href.split("/")[3]
+      setSelected((pth === "") ? "inicio":pth) 
+    }}
+    active = { title.replace(/\s+/g, '').toLowerCase() === selected }
+  >
+    { title }
+    <Link to={ link }/>
+  </MenuItem>
+  </>
+  )
+}
 
 const AsideMenu = () => {
 
+  const [selected, setSelected] = useState(window.location.href.split("/")[3])
   const [ collapsed, setCollapsed ] = React.useState(true)
   const theme = useTheme()
   const { modeContext } = React.useContext(ModeContext);
-
+  useEffect(() => {
+    setSelected((selected === "") ? "inicio":selected)
+  }, [])
   return (
       <Box  sx={{
         "& .pro-sidebar-inner": {
@@ -22,13 +42,16 @@ const AsideMenu = () => {
           backgroundColor: "transparent !important",
         },
         "& .pro-inner-item": {
-          padding: "5px 35px 5px 20px !important",
+          padding: "5px 35px 5px 15px !important",
         },
         "& .pro-inner-item:hover": {
           color: "#61dafb !important",
         },
         "& .pro-menu-item.active": {
-          color: "#6870fa !important",
+          backgroundColor: `${ theme.palette.secondary.main } !important`
+        },
+        "& .pro-menu-item.active span": {
+          color: ` ${ theme.palette.primary.main } !important`,
         },
         "& .pro-menu ul, .pro-menu": {
           height: "100%"
@@ -39,8 +62,17 @@ const AsideMenu = () => {
         "& .pro-arrow-wrapper": {
           color: theme.palette.secondary.main
         },
+        "& .pro-sub-menu > .pro-inner-item .pro-item-content, strong, .pro-arrow": {
+          color: theme.palette.secondary.main,
+          fontWeight: "bold"
+        },
         "& .pro-item-content": {
-          color: theme.palette.secondary.main
+          color: theme.palette.secondary.main,
+        },
+
+        "& .pro-sub-menu  .pro-inner-list-item ul":{
+          borderLeft: "1px solid",
+          color: theme.palette.secondary.main,
         }
       }}>
         <ProSidebar collapsed={ collapsed }>
@@ -48,7 +80,7 @@ const AsideMenu = () => {
               <Box sx={{ height: "100%" }}>
                 <Box>
                   <MenuItem
-                    icon={ (collapsed ? <ArrowForward/>:<ArrowBack />) }
+                    icon={ <MenuIcon /> }
                     onClick={ () => setCollapsed(!collapsed) }
                   >
                     {(!collapsed) && 
@@ -59,9 +91,10 @@ const AsideMenu = () => {
                         justifyContent="center"
                         alignItems="center"
                       >
-                        Menu
+                        <strong>Menu</strong>
                       </Typography>  
                     </Box>)}
+                    
                   </MenuItem>
                 </Box>
                 <Box
@@ -77,52 +110,55 @@ const AsideMenu = () => {
                         marginTop: "50px"
                       }}
                     >
-                      <MenuItem
-                        icon={ <HouseOutlined />}
+                      <strong>
+                        <MenuItemCustom Icon={ HouseOutlined } title="Inicio" link="/" setSelected={setSelected} selected={selected}/>
+                      </strong>
+                      
+                      <SubMenu
+                        title="Partidos"
+                        icon= { <SportsVolleyball /> }
+                        sx= {{
+                          borderLeft: "2px solid",
+                          borderColor: theme.palette.secondary.main
+                        }}
                       >
-                        Home
-                      </MenuItem>
-                      <MenuItem
-                        icon={ <Group />}
-                      >
-                        Equipos
-                      </MenuItem>
+                        <MenuItemCustom selected={selected} Icon={ CalendarMonth } title="Rol de partidos" link="/roldepartidos" setSelected={setSelected}/>
+                        <MenuItemCustom selected={selected} Icon={ TableChart } title="Tabla de posiciones" link="/tabladeposiciones" setSelected={setSelected}/>
+                        <MenuItemCustom selected={selected} Icon={ Today } title="Partidos del dia" link="/partidosdeldia" setSelected={setSelected}/>
+                      </SubMenu>
 
                       <SubMenu
-                        title="Campeonato"
-                        icon= { <EmojiEvents /> }
+                        title="Clubes"
+                        icon= { <Diversity3Sharp /> }
                       >
-                        <MenuItem
-                          icon={ <Surfing /> }
-                        >
-                          Button sub
-                        </MenuItem>
-                        <MenuItem
-                          icon={ <LightMode  />}
-                        >
-                          Otro Botton
-                        </MenuItem>
-                      </SubMenu>
-                      <SubMenu
-                        title="Arbitraje y reglamento"
-                        icon= { <Sports /> }
-                      >
-                        <MenuItem
-                          icon={ <Surfing /> }
-                        >
-                          Button sub
-                        </MenuItem>
-                        <MenuItem
-                          icon={ <LightMode  />}
-                        >
-                          Otro Botton
-                        </MenuItem>
+                        <MenuItemCustom selected={selected} Icon={ GroupsSharp } title="Equipos" link="/equipos" setSelected={setSelected}/>
+                        <MenuItemCustom selected={selected} Icon={ Accessibility } title="Jugadores" link="/jugadores" setSelected={setSelected}/>
                       </SubMenu>
                       <MenuItem
-                        icon={ <Campaign />}
+                        icon={ <SignLanguage />}
+                        sx={{
+                          whiteSpace: "nowrap"
+                        }}
+                        onClick={ () => { setSelected(window.location.href.split("/")[3]) }}
+                        active = { "reglamento" === selected }
                       >
-                        Noticias
+                        <Typography
+                          variant='div'
+                          sx={{
+                            fontWeight: "bold",
+                            wordBreak: "normal",
+                            overflow: "hidden",
+                            whiteSpace: (!collapsed) ? "normal":"none",
+                            animation: "none"
+                          }}
+                        >
+                          Reglamento y Gestos Arbitrales
+                        </Typography>
+                        <Link to="reglamento"/>
                       </MenuItem>
+                      <strong>
+                        <MenuItemCustom selected={selected} Icon={ Campaign } title="Noticias" link="/noticias" setSelected={setSelected}/>
+                      </strong>
                     </Box>
                     <Box>
                       <MenuItem
