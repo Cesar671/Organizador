@@ -1,0 +1,44 @@
+   .card-title {
+    font-size: 1.2em;
+    color: #343a40;
+  }
+  
+  .card {
+    cursor: pointer;
+    margin: 10px; /* Añade algo de espacio alrededor de cada card */
+    transition: transform 0.2s; /* Añade una transición suave al hacer hover */
+  }
+  
+  .card:hover {
+    transform: scale(1.05); /* Escala ligeramente la card al hacer hover */
+  }
+  
+  .text-center h5 {
+    font-size: 2rem;
+  }
+
+  
+  .img-fluid {
+    object-fit: cover; /* Asegura que la imagen en el modal no se distorsione */
+    height: 200px; /* Ajusta la altura máxima según tus necesidades */
+    width: 100%; /* Asegura que la imagen ocupe todo el ancho del contenedor */
+  }
+
+ 
+  .card-img-top {
+    object-fit: contain; /* Ajusta la imagen para que se muestre completa sin recortarse */
+    height: 150px; /* Ajusta la altura según tus necesidades */
+    width: 100%; /* Asegura que la imagen ocupe todo el ancho del contenedor */
+    max-width: 100%; /* Asegura que la imagen no se estire más allá del contenedor */
+    border-radius: 0.50rem; /* Opcional: añade bordes redondeados */
+  }
+  
+  .card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+    transition: box-shadow 0.3s ease-in-out; /* Transición suave para el efecto hover */
+  }
+  
+  .card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra más prominente al pasar el ratón */
+  }
+  
