@@ -12,6 +12,7 @@ import Reglamento from './pages/Reglamento';
 import Noticias from './pages/Noticias';
 import { RolPartidos2 } from './pages/rolPartidos/RolPartidos2';
 import { VerRolPartidos } from './pages/rolPartidos/VerRolPartidos';
+import { EquipoVs } from './pages/rolPartidos/EquipoVs';
 function App() {
   return (
     <Muitheme>
@@ -23,7 +24,8 @@ function App() {
               <Route path= "/" element= { <Home /> }/>
               <Route path= "/equipos" element= { <Clubes /> }/>
               <Route path= "/roldepartidos" element= { <RolPartidos2 /> }/>
-              <Route path= "/verroldepartidos" element= { <VerRolPartidos /> }/>
+              <Route path= "/roldepartidos/verroldepartidos" element= { <VerRolPartidos /> }/>
+              <Route path= "/roldepartidos/verroldepartidos/Equipo" element= { <EquipoVs /> }/>
               <Route path= "/tabladeposiciones" element= { <TablaPosiciones /> }/>
               <Route path= "/partidosdeldia" element= { <PartidosDelDia /> }/>
               <Route path= "/jugadores" element= { <Jugadores /> }/>

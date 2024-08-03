@@ -1,39 +1,46 @@
-// src/components/RolPartidos2.js
-import React from 'react';
-import { Cards } from './components/cards';
-import Button from 'react-bootstrap/Button';
-import { useNavigate } from 'react-router-dom'; 
+import React, { useEffect, useState } from "react";
+import { Cards } from "./components/cards";
+import Button from "react-bootstrap/Button";
+import { useNavigate } from "react-router-dom";
+import teamsData from "./components/teams.json";
 
-const teams = [
-  { name: "Club San Martin", logo: "/club1.webp" },
-  { name: "Club Olympic", logo: "/club2.jpg" },
-  { name: "Club Vipers", logo: "/club3.jpg" },
-  { name: "Club Fenix", logo: "/club4.jpg" },
-  { name: "Club Albert Einstein", logo: "/equipo2.png" },
-  { name: "Club Don Bosco", logo: "/equipo1.png" },
-  { name: "Club Panteras", logo: "/club1.webp" },
-  { name: "Club Vinto", logo: "/equipo3.png" },
-];
+const checkIfClickable = () => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(true);
+    }, 1000);
+  });
+};
 
 export const RolPartidos2 = () => {
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
+  const [teams, setTeams] = useState([]);
+
+  useEffect(() => {
+    setTeams(teamsData);
+  }, []);
+  
 
   const handleButtonClick = () => {
-    navigate('/verroldepartidos');
+    navigate("/roldepartidos/verroldepartidos");
   };
 
   return (
-    <div className="container mt-4">
-     <h2 className='fw-bold'>Lista de equipos</h2>
-      <Button className='m-4' onClick={handleButtonClick}>Ver Rol de Partidos</Button>
+    <div className="container mt-4" style={{overflowX:'auto'}}>
+      <h2 className="fw-bold">Lista de equipos</h2>
+      <Button className="btnC m-4" onClick={handleButtonClick}>
+        Ver Rol de Partidos
+      </Button>
       <div className="row">
         {teams.map((team, index) => (
-          <Cards 
-            key={index} 
-            name={team.name} 
-            logo={team.logo} 
-            width="200px" 
-            height="200px" 
+          <Cards
+            key={index}
+            name={team.name}
+            logo={team.logo}
+            width="200px"
+            height="200px"
+            fontSize="20px"
+            checkIfClickable={checkIfClickable}
           />
         ))}
       </div>
