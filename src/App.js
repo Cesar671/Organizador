@@ -5,13 +5,13 @@ import { Routes, Route } from 'react-router-dom';
 import TopMenu from './global/TopMenu';
 import Clubes from './pages/Clubes';
 import Home from './pages/Home';
-import RolPartidos from './pages/rolPartidos/RolPartidos';
 import TablaPosiciones from './pages/TablaPosiciones';
 import PartidosDelDia from './pages/PartidosDelDia';
 import Jugadores from './pages/Jugadores';
 import Reglamento from './pages/Reglamento';
 import Noticias from './pages/Noticias';
 import { RolPartidos2 } from './pages/rolPartidos/RolPartidos2';
+import { VerRolPartidos } from './pages/rolPartidos/VerRolPartidos';
 function App() {
   return (
     <Muitheme>
@@ -23,6 +23,7 @@ function App() {
               <Route path= "/" element= { <Home /> }/>
               <Route path= "/equipos" element= { <Clubes /> }/>
               <Route path= "/roldepartidos" element= { <RolPartidos2 /> }/>
+              <Route path= "/verroldepartidos" element= { <VerRolPartidos /> }/>
               <Route path= "/tabladeposiciones" element= { <TablaPosiciones /> }/>
               <Route path= "/partidosdeldia" element= { <PartidosDelDia /> }/>
               <Route path= "/jugadores" element= { <Jugadores /> }/>

@@ -123,6 +123,7 @@ const AsideMenu = () => {
                         }}
                       >
                         <MenuItemCustom selected={selected} Icon={ CalendarMonth } title="Rol de partidos" link="/roldepartidos" setSelected={setSelected}/>
+                        <MenuItemCustom selected={selected} Icon={ CalendarMonth } title="Ver Rol de partidos" link="/verroldepartidos" setSelected={setSelected}/>
                         <MenuItemCustom selected={selected} Icon={ TableChart } title="Tabla de posiciones" link="/tabladeposiciones" setSelected={setSelected}/>
                         <MenuItemCustom selected={selected} Icon={ Today } title="Partidos del dia" link="/partidosdeldia" setSelected={setSelected}/>
                       </SubMenu>
