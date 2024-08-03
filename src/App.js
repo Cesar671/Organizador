@@ -1,3 +1,4 @@
+import React from 'react';
 import './App.css';
 import Muitheme from './theme/Muitheme';
 import AsideMenu from './global/AsideMenu';
@@ -12,12 +13,13 @@ import Jugadores from './pages/Jugadores';
 import Reglamento from './pages/Reglamento';
 import Noticias from './pages/Noticias';
 function App() {
+  const [selected, setSelected] = React.useState(window.location.href.split("/")[3])
   return (
     <Muitheme>
       <div className="App">
-        <AsideMenu/>
+        <AsideMenu selected = {selected} setSelected = {setSelected}/>
           <div className='MainContainer'>
-          <TopMenu />
+          <TopMenu selected = {selected} setSelected = {setSelected}/>
             <Routes>
               <Route path= "/" element= { <Home /> }/>
               <Route path= "/equipos" element= { <ClubesOrg /> }/>

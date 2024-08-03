@@ -22,7 +22,6 @@ const Card = ({ image, name }) => {
         const dominantColor = colorThief.getColor(img);
         setColor(dominantColor);
         }
-        console.log(color)
     }
   }, [color]);
   return (
@@ -47,7 +46,7 @@ const Card = ({ image, name }) => {
                 }
             }}
         >
-            <Box vint
+            <Box 
                 sx={{
                     backgroundColor: "white",
                     borderRadius: "20px",
