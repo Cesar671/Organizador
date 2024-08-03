@@ -6,7 +6,7 @@ import { useTheme } from '@mui/material'
 import Card from '../components/Card'
 import { equipos } from '../data'
 import ButtonCustom from '../components/ButtonCustom'
-const Clubes = () => {
+const ClubesOrg = () => {
   const [ checked, setCheked ] = useState(true)
   const theme = useTheme()
   const handleChange = (e) => {
@@ -64,7 +64,8 @@ const Clubes = () => {
       sx = {{
         display: "flex",
         flexWrap: "wrap",
-        justifyContent: "center",
+        justifyContent: "left",
+        alignItems: "initial"
       }}
     >
       { equipos.map((item) => <Card name= { item.name } image= { item.image } />) }
@@ -82,4 +83,4 @@ const Clubes = () => {
   )
 }
 
-export default Clubes
+export default ClubesOrg

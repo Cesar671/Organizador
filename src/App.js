@@ -3,7 +3,7 @@ import Muitheme from './theme/Muitheme';
 import AsideMenu from './global/AsideMenu';
 import { Routes, Route } from 'react-router-dom';
 import TopMenu from './global/TopMenu';
-import Clubes from './pages/Clubes';
+import ClubesOrg from './pages/ClubesOrg';
 import Home from './pages/Home';
 import RolPartidos from './pages/RolPartidos';
 import TablaPosiciones from './pages/TablaPosiciones';
@@ -20,7 +20,8 @@ function App() {
           <TopMenu />
             <Routes>
               <Route path= "/" element= { <Home /> }/>
-              <Route path= "/equipos" element= { <Clubes /> }/>
+              <Route path= "/equipos" element= { <ClubesOrg /> }/>
+              <Route path= "/equiposOrg" element= { <ClubesOrg /> }/>
               <Route path= "/roldepartidos" element= { <RolPartidos /> }/>
               <Route path= "/tabladeposiciones" element= { <TablaPosiciones /> }/>
               <Route path= "/partidosdeldia" element= { <PartidosDelDia /> }/>

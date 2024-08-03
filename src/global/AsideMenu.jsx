@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Typography, Box, useTheme } from "@mui/material"
 import { ProSidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar'
 import { DarkModeOutlined, LightModeOutlined, Menu as MenuIcon} from "@mui/icons-material"
-import { HouseOutlined, GroupsSharp, Accessibility, SignLanguage, Campaign, SportsVolleyball, CalendarMonth,TableChart,Today,Diversity3Sharp } from '@mui/icons-material';
+import { HouseOutlined, GroupsSharp, GroupOutlined , Accessibility, SignLanguage, Campaign, SportsVolleyball, CalendarMonth,TableChart,Today,Diversity3Sharp } from '@mui/icons-material';
 import 'react-pro-sidebar/dist/css/styles.css';
 import { ModeContext } from '../theme/modeContext';
 import { Link } from 'react-router-dom';
@@ -73,9 +73,13 @@ const AsideMenu = () => {
         "& .pro-sub-menu  .pro-inner-list-item ul":{
           borderLeft: "1px solid",
           color: theme.palette.secondary.main,
-        }
+        },
+
       }}>
-        <ProSidebar collapsed={ collapsed }>
+        
+        <ProSidebar collapsed={ collapsed }
+          style={{ position:"fixed" }}
+        >
             <Menu iconShape='square'>
               <Box sx={{ height: "100%" }}>
                 <Box>
@@ -133,6 +137,7 @@ const AsideMenu = () => {
                       >
                         <MenuItemCustom selected={selected} Icon={ GroupsSharp } title="Equipos" link="/equipos" setSelected={setSelected}/>
                         <MenuItemCustom selected={selected} Icon={ Accessibility } title="Jugadores" link="/jugadores" setSelected={setSelected}/>
+                        <MenuItemCustom selected={selected} Icon={ GroupOutlined } title="Equipos Org" link="/equiposorg" setSelected={setSelected}/>
                       </SubMenu>
                       <MenuItem
                         icon={ <SignLanguage />}
@@ -174,6 +179,12 @@ const AsideMenu = () => {
                 
              
             </Menu>
+        </ProSidebar>
+        <ProSidebar
+            collapsed= {collapsed}
+            style={{ zIndex:"-1" }}
+          >
+
         </ProSidebar>
       </Box>
   )
