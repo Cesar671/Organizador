@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect} from 'react'
 import { Box } from '@mui/material'
 import { AccountCircle } from "@mui/icons-material"
 
 const TopMenu = () => {
-    const [ dir, setDir ] = useState(null)
+   
     useEffect(() => {
         //console.log(dir.split("/"))
         //onst dirs = window.location.href.split("/").slice(3)    
@@ -25,8 +25,8 @@ const TopMenu = () => {
             sx = {{
                 display: "flex",
                 alignItems: "center",
-                gap: "5px",
-
+                gap: "5px", 
+                
             }}
         >
             Don Vlady
