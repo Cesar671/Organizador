@@ -5,7 +5,10 @@ import { GridView, FormatListBulleted  } from '@mui/icons-material'
 import { useTheme } from '@mui/material'
 import Card from '../components/Card'
 import { equipos } from '../data'
-import ButtonCustom from '../components/ButtonCustom'
+import FormRegistroEquipos from '../components/FormRegistroEquipos'
+import ModalCustom from '../components/Modal'
+import { Add } from '@mui/icons-material'
+
 const ClubesOrg = () => {
   const [ checked, setCheked ] = useState(true)
   const theme = useTheme()
@@ -19,7 +22,7 @@ const ClubesOrg = () => {
       display: "flex",
       flexDirection: "column",
       gap: "10px",
-      padding: "20px"
+      padding: "50px"
     }}
   >
     <h1> Lista de Equipos </h1>
@@ -27,7 +30,7 @@ const ClubesOrg = () => {
       sx = {{
         display:"flex",
         gap: "20px",
-        justifyContent: "end"
+        justifyContent: "end",
       }}
     >
       <Box
@@ -65,7 +68,7 @@ const ClubesOrg = () => {
         display: "flex",
         flexWrap: "wrap",
         justifyContent: "left",
-        alignItems: "initial"
+        alignItems: "initial",
       }}
     >
       { equipos.map((item) => <Card name= { item.name } image= { item.image } />) }
@@ -77,7 +80,7 @@ const ClubesOrg = () => {
         justifyContent: "end"
       }}
     > 
-      <ButtonCustom />
+      <ModalCustom nameButton="Registrar Equipo" Icon={ Add } Component={ FormRegistroEquipos }/>
     </Box>
   </Box>
   )
