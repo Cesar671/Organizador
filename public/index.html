@@ -24,7 +24,8 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>Organizador</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -38,6 +39,17 @@
 
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
+
     -->
+    <script type="application/javascript">
+      jQuery('input[type=file]').change(function(){
+       var filename = jQuery(this).val().split('\\').pop();
+       var idname = jQuery(this).attr('id');
+       console.log(jQuery(this));
+       console.log(filename);
+       console.log(idname);
+       jQuery('span.'+idname).next().find('span').html(filename);
+      });
+    </script>
   </body>
 </html>

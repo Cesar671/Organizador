@@ -1,14 +1,33 @@
-import React, { useEffect} from 'react'
+import React, { useEffect, useState} from 'react'
 import { Box } from '@mui/material'
 import { AccountCircle } from "@mui/icons-material"
+import { Link } from 'react-router-dom'
 
-const TopMenu = () => {
-   
+const TopNav = ({ data, setSelected }) => {
+
+    return (
+    <Box
+        sx = {{
+            display: "flex",
+            fontSize: "25px"
+        }}
+    >
+    <Link onClick={ () => {
+        setSelected("inicio")
+    }} to="/">
+        inicio
+    </Link>
+        /{(data.length > 0) && data.map((palabra, index) => <><Link to={ data.slice(0, data.length-index).join("/") }>{ palabra }</Link>/</>) }
+    </Box>
+    )
+}
+
+const TopMenu = ({ selected, setSelected }) => {
+    const [ dir, setDir ] = useState(null)
     useEffect(() => {
-        //console.log(dir.split("/"))
-        //onst dirs = window.location.href.split("/").slice(3)    
-        //console.log(dirs)    
-    },[])
+        const dirs = window.location.href.split("/").slice(3)    
+        setDir(dirs)  
+    },[selected])
   return (
     <Box
         sx = {{
@@ -20,7 +39,7 @@ const TopMenu = () => {
             alignItems: "center"
         }}
     >
-        <div>Navegador/Navegador/Navegador</div>
+        <div>{(dir) && (<TopNav setSelected={setSelected} data={dir} />) }</div>
         <Box
             sx = {{
                 display: "flex",

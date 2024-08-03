@@ -1,10 +1,11 @@
 import React from 'react';
-import { Box, Typography, Card, CardMedia, CardContent, Button, IconButton } from '@mui/material';
+import { Box, Typography, Card, CardMedia, CardContent, IconButton, Button } from '@mui/material';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { equipos } from './equipos';
-import { Facebook, Instagram, Twitter } from '@mui/icons-material';
+import { Facebook, Instagram, Twitter, WhatsApp, ArrowBack } from '@mui/icons-material';
 import entrenador from './imagenes/coach.jpg';
+import qrWhatsapp from './imagenes/qr-code.png'; // Asegúrate de tener esta imagen
 
 const EquipoDetalle = () => {
   const { equipoId } = useParams();
@@ -22,14 +23,10 @@ const EquipoDetalle = () => {
   };
 
   return (
-    <Box sx={{ padding: 2 }}>
-      <Typography variant="h4" sx={{ marginBottom: 2 }}>
-        {equipo.nombre}
-      </Typography>
-
+    <Box sx={{ padding: 2, backgroundColor: '#E6F0FF' }}>
       <Box sx={{ display: 'flex', justifyContent: 'space-around', marginBottom: 4 }}>
         {/* Card del equipo */}
-        <Card sx={{ backgroundColor: '#0a2540', color: '#fff', padding: 2, maxWidth: 300 }}>
+        <Card sx={{ backgroundColor: '#74C0FC', color: '#0a2540', padding: 2, maxWidth: 250, boxShadow: 3, borderRadius: 2, maxHeight: 450 }}>
           <CardMedia
             component="img"
             sx={{ height: 140, objectFit: 'contain' }} // Asegura que la imagen se ajuste correctamente
@@ -37,10 +34,10 @@ const EquipoDetalle = () => {
             alt={equipo.nombre}
           />
           <CardContent>
-            <Typography variant="h6" sx={{ textAlign: 'center' }}>
+            <Typography variant="h6" sx={{ textAlign: 'center', fontWeight: 'bold' }}>
               {equipo.nombre}
             </Typography>
-            <Typography variant="body2" sx={{ marginTop: 2 }}>
+            <Typography variant="body2" sx={{ marginTop: 2, textAlign: 'justify', fontSize: 14 }}>
               {equipo.descripcion}
             </Typography>
           </CardContent>
@@ -50,7 +47,7 @@ const EquipoDetalle = () => {
         <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
           <Button 
             variant="contained" 
-            sx={{ backgroundColor: '#0a2540', color: '#fff', margin: 2 }}
+            sx={{ backgroundColor: '#0a2540', color: '#fff', margin: 2, padding: '10px 20px', fontWeight: 'bold', borderRadius: 4 }}
             component={Link} 
             to={`/equipos/${equipoId}/plantilla`}
           >
@@ -58,35 +55,64 @@ const EquipoDetalle = () => {
           </Button>
         </Box>
 
-        {/* Card del jugador */}
-        <Card sx={{ backgroundColor: '#0a2540', color: '#fff', padding: 2, maxWidth: 300 }}>
-          <CardMedia
-            component="img"
-            sx={{ height: 140, objectFit: 'contain' }} // Asegura que la imagen se ajuste correctamente
-            image={jugador.imagen}
-            alt={jugador.nombre}
-          />
-          <CardContent>
-            <Typography variant="h6" sx={{ textAlign: 'center' }}>
-              {jugador.nombre}
-            </Typography>
-            <Typography variant="body2" sx={{ marginTop: 2 }}>
-              {jugador.descripcion}
-            </Typography>
-          </CardContent>
-        </Card>
+        {/* Card del jugador y WhatsApp al costado */}
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+          <Card sx={{ backgroundColor: '#74C0FC', color: '#0a2540', padding: 2, maxWidth: 250, boxShadow: 3, borderRadius: 2, maxHeight: 450 }}>
+            <CardMedia
+              component="img"
+              sx={{ height: 140, objectFit: 'contain' }} 
+              image={jugador.imagen}
+              alt={jugador.nombre}
+            />
+            <CardContent>
+              <Typography variant="h6" sx={{ textAlign: 'center', fontWeight: 'bold' }}>
+                {jugador.nombre}
+              </Typography>
+              <Typography variant="body2" sx={{ marginTop: 2, textAlign: 'justify', fontSize: 14 }}>
+                {jugador.descripcion}
+              </Typography>
+            </CardContent>
+          </Card>
+
+          {/* WhatsApp al costado */}
+          <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <Typography variant="h6" sx={{ textAlign: 'center', color: '#0a2540', fontWeight: 'bold', marginBottom: 1 }}>
+            Contacto
+           </Typography>
+            <IconButton 
+              color="primary" 
+              component="a" 
+              href="https://wa.me/1234567890"  // Enlace de WhatsApp
+              target="_blank" 
+              rel="noopener noreferrer"
+              sx={{ marginBottom: 2 }}
+            >
+              <WhatsApp sx={{ color: '#25D366', fontSize: 40 }} />
+            </IconButton>
+            <CardMedia
+              component="img"
+              sx={{ height: 100, width: 100, objectFit: 'contain' }} 
+              image={qrWhatsapp}
+              alt="QR WhatsApp"
+            />
+          </Box>
+        </Box>
       </Box>
 
       {/* Redes sociales */}
-      <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2, marginTop: 4 }}>
+      <Typography variant="h6" sx={{ textAlign: 'center', color: '#0a2540', fontWeight: 'bold', marginBottom: 1 }}>
+        Redes Sociales
+      </Typography>
+      <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2 }}>
         <IconButton 
           color="primary" 
           component="a" 
           href="https://www.facebook.com" 
           target="_blank" 
           rel="noopener noreferrer"
+          sx={{ fontSize: 40 }}
         >
-          <Facebook sx={{ color: '#3b5998' }} />
+          <Facebook sx={{ color: '#3b5998', fontSize: 40 }} />
         </IconButton>
         <IconButton 
           color="primary" 
@@ -94,8 +120,9 @@ const EquipoDetalle = () => {
           href="https://www.instagram.com" 
           target="_blank" 
           rel="noopener noreferrer"
+          sx={{ fontSize: 40 }}
         >
-          <Instagram sx={{ color: '#E1306C' }} />
+          <Instagram sx={{ color: '#E1306C', fontSize: 40 }} />
         </IconButton>
         <IconButton 
           color="primary" 
@@ -103,21 +130,21 @@ const EquipoDetalle = () => {
           href="https://www.twitter.com" 
           target="_blank" 
           rel="noopener noreferrer"
+          sx={{ fontSize: 40 }}
         >
-          <Twitter sx={{ color: '#1DA1F2' }} />
+          <Twitter sx={{ color: '#1DA1F2', fontSize: 40 }} />
         </IconButton>
       </Box>
 
-      {/* Botón para regresar a la lista de equipos */}
+      {/* Botón para regresar a la lista de equipos con animación */}
       <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: 4 }}>
-        <Button 
-          variant="outlined" 
-          sx={{ backgroundColor: '#fff', color: '#0a2540' }}
+        <IconButton 
+          sx={{ backgroundColor: '#0a2540', color: '#fff', '&:hover': { transform: 'scale(1.1)' }, transition: 'transform 0.3s' }}
           component={Link}
           to="/equipos"
         >
-          Volver a la lista de equipos
-        </Button>
+          <ArrowBack sx={{ fontSize: 40 }} />
+        </IconButton>
       </Box>
     </Box>
   );

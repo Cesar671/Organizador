@@ -24,9 +24,8 @@ const MenuItemCustom = ({Icon, title, link, setSelected, selected}) => {
   )
 }
 
-const AsideMenu = () => {
+const AsideMenu = ({ selected, setSelected }) => {
 
-  const [selected, setSelected] = useState(window.location.href.split("/")[3])
   const [ collapsed, setCollapsed ] = React.useState(true)
   const theme = useTheme()
   const { modeContext } = React.useContext(ModeContext);

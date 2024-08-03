@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect, useLayoutEffect } from 'react'
 import { Box, useTheme,  Button} from '@mui/material'
 import { Link } from 'react-router-dom'
 import ColorThief from "colorthief"
-const Card = ({ image, name }) => {
+const Card = ({ image, name, id }) => {
     const imgref = useRef(null)
     const [color, setColor] = useState(null)
   const theme = useTheme()
@@ -22,11 +22,10 @@ const Card = ({ image, name }) => {
         const dominantColor = colorThief.getColor(img);
         setColor(dominantColor);
         }
-        console.log(color)
     }
   }, [color]);
   return (
-    <Button component = { Link } to="/">
+    <Button component = { Link } to={"/equiposorg/"+id}>
         <Box
             sx={{
                 backgroundColor: (color) ? `rgb(${color[0]}, ${color[1]}, ${color[2]})`:theme.palette.primary.main,
@@ -47,7 +46,7 @@ const Card = ({ image, name }) => {
                 }
             }}
         >
-            <Box vint
+            <Box 
                 sx={{
                     backgroundColor: "white",
                     borderRadius: "20px",

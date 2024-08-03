@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import './App.css';
 import Muitheme from './theme/Muitheme';
 import AsideMenu from './global/AsideMenu';
@@ -11,17 +12,24 @@ import PartidosDelDia from './pages/PartidosDelDia';
 import Jugadores from './pages/Jugadores';
 import Reglamento from './pages/Reglamento';
 import Noticias from './pages/Noticias';
+import VistaClubOrg from './pages/VistaClubOrg';
+import { FullDataCtxt } from './global/contexts/equipContext';
+import { equipos, jugadores } from './data';
 import Equipos from "./pages/clubes/equipos"
 import EquipoDetalle from './pages/clubes/equipoDetalles';
 import Planilla from './pages/clubes/planilla';
 
 function App() {
+  const [equiposN, setEquipos] = useState(equipos)
+  const [jugadoresN, setJugadores] = useState(jugadores)
+  const [selected, setSelected] = React.useState(window.location.href.split("/")[3])
   return (
     <Muitheme>
       <div className="App">
-        <AsideMenu/>
+        <FullDataCtxt.Provider value={{equiposN, jugadoresN, setEquipos, setJugadores}}>
+          <AsideMenu selected = {selected} setSelected = {setSelected}/>
           <div className='MainContainer'>
-          <TopMenu />
+          <TopMenu selected = {selected} setSelected = {setSelected}/>
             <Routes>
               <Route path= "/" element= { <Home /> }/>
               <Route path= "/equipos" element= { <Equipos /> }/>
@@ -36,7 +44,7 @@ function App() {
               <Route path="/equipos/:equipoId/plantilla" element={<Planilla />} />
             </Routes>
           </div>
-        
+        </FullDataCtxt.Provider>    
       </div>
     </Muitheme>
   );

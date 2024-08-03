@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Box, Typography, Grid, Button, TextField } from '@mui/material';
-import { useParams, Link } from 'react-router-dom';  // Asegúrate de importar Link
+import { useParams, Link } from 'react-router-dom';  
 import JugadorCard from './components/JugadorCard';
 import jugador from './imagenes/modelo.jpg'
 
@@ -17,7 +17,7 @@ const jugadoresData = [
 
 const Planilla = () => {
   const { equipoId } = useParams();
-  const [vista, setVista] = useState('grid'); // 'grid' o 'list'
+  const [vista, setVista] = useState('grid'); 
   const [search, setSearch] = useState('');
 
   const filteredJugadores = jugadoresData.filter(jugador =>
@@ -59,7 +59,7 @@ const Planilla = () => {
           variant="outlined" 
           sx={{ backgroundColor: '#fff', color: '#0a2540' }}
           component={Link}
-          to={`/equipos/${equipoId}`} // Navega de regreso a la página de detalles del equipo
+          to={`/equipos/${equipoId}`}
         >
           Volver a detalles del equipo
         </Button>

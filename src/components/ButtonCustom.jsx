@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box, Button, useTheme } from '@mui/material'
 import { Add } from '@mui/icons-material'
-const ButtonCustom = () => {
+const ButtonCustom = ({ name, Icon, event }) => {
  const theme = useTheme()
   return (
     <Box
@@ -15,9 +15,10 @@ const ButtonCustom = () => {
                 backgroundColor: theme.palette.secondary.main
             }
         }}
-        startIcon = { <Add /> }
+        startIcon = { <Icon /> }
+        onClick = { event }
     >
-        Registrar Equipo
+        { name }
     </Box>
   )
 }
