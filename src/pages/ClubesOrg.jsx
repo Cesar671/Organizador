@@ -1,4 +1,4 @@
-import React,{ useState } from 'react'
+import React,{ useContext, useState } from 'react'
 import { Box, Button } from '@mui/material'
 import {Switch, FormControlLabel } from '@mui/material'
 import { GridView, FormatListBulleted  } from '@mui/icons-material'
@@ -8,10 +8,11 @@ import FormRegistroEquipos from '../components/FormRegistroEquipos'
 import ModalCustom from '../components/Modal'
 import { Add } from '@mui/icons-material'
 import { DataGrid } from '@mui/x-data-grid'
-import { equipos , jugadores } from '../data'
 import { Link } from 'react-router-dom'
+import { FullDataCtxt } from '../global/contexts/equipContext'
 
 const ClubesOrg = () => {
+  const { equiposN } = useContext(FullDataCtxt)
   const [ checked, setCheked ] = useState(false)
   const theme = useTheme()
   const columns = [
@@ -40,7 +41,8 @@ const ClubesOrg = () => {
   }
 
   return (
-  <Box
+
+    <Box
     sx = {{
       display: "flex",
       flexDirection: "column",
@@ -94,9 +96,9 @@ const ClubesOrg = () => {
         alignItems: "initial",
       }}
     >
-      {(!checked) ? equipos.map((item) => <Card id={ item.id } name= { item.name } image= { item.image } />):<DataGrid
+      {(!checked) ? equiposN.map((item) => <Card id={ item.id } name= { item.name } image= { item.image } />):<DataGrid
                 disableColumnResize
-                rows={ equipos }
+                rows={ equiposN }
                 columns={ columns }
                 pagination= {false}
                 componentsProps={{
