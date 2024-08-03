@@ -5,6 +5,23 @@ import { DataGrid } from '@mui/x-data-grid'
 import ButtonCustom from '../components/ButtonCustom'
 const FormRegistroEquipos = () => {
     const theme = useTheme()
+
+    const [nombre, setNombre] = useState("")
+    const [descripcion, setDescripcion] = useState("")
+
+    const [nombreJugador, setNombreJugador] = useState("")
+    const [ci, setCi] = useState("")
+    const [dateJugador, setDateJugador] = useState("")
+    const [genero, setGenero] = useState("")
+
+    const handleNombre = (e) => setNombre(e.value)
+    const handleDescripcion = (e) => setDescripcion(e.value)
+    const handleNombreJugador = (e) => setNombreJugador(e.value)
+    const handleCi = (e) => setCi(e.value)
+    const handleDateJugador = (e) => setDateJugador(e.value)
+    const handleGenero = (e) => setGenero(e.value)
+
+
     const [image, setImage] = useState("imgdefault.webp")
     const columns = [
         { field: 'col1', headerName: '#', width: 50, disableColumnMenu: true },
@@ -58,9 +75,9 @@ const FormRegistroEquipos = () => {
                 }}
             >
                 <h1>Registrar Equipo</h1>
-                <label>Nombre : <input placeholder='Nombre del equipo'/></label>
+                <label>Nombre : <input placeholder='Nombre del equipo' value={ nombre } onChange={ handleNombre }/></label>
                 <label>Descripcion :</label>
-                <textarea type="" style={{ resize: "none", width:"260px", height:"100px"}} placeholder='descripcion del equipo'/>
+                <textarea value={descripcion} onChange={ handleDescripcion } type="" style={{ resize: "none", width:"260px", height:"100px"}} placeholder='descripcion del equipo'/>
             </Box>
             <Box
                 sx={{
@@ -146,10 +163,10 @@ const FormRegistroEquipos = () => {
                 gap: "5px"
             }}
         >
-            <input placeholder='Nombre'/>
-            <input placeholder='Ci' type='number' style={{width:"80px"}} />
-            <input placeholder='fecha de nacimiento' type='date'/>
-            <select id="options" name="options">
+            <input placeholder='Nombre' value={ nombreJugador } onChange={ handleNombreJugador }/>
+            <input placeholder='Ci' type='number' style={{width:"80px"}} value={ci} onChange={handleCi}/>
+            <input placeholder='fecha de nacimiento' type='date' value={dateJugador} onChange={handleDateJugador}/>
+            <select id="options" name="options" value={ genero } onChange={ handleGenero }>
                 <option value="Genero" selected>Genero</option>
                 <option value="Masculino">Masculino</option>
                 <option value="Femenino">Femenino</option>

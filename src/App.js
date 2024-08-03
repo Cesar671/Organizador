@@ -12,6 +12,7 @@ import PartidosDelDia from './pages/PartidosDelDia';
 import Jugadores from './pages/Jugadores';
 import Reglamento from './pages/Reglamento';
 import Noticias from './pages/Noticias';
+import VistaClubOrg from './pages/VistaClubOrg';
 function App() {
   const [selected, setSelected] = React.useState(window.location.href.split("/")[3])
   return (
@@ -23,6 +24,7 @@ function App() {
             <Routes>
               <Route path= "/" element= { <Home /> }/>
               <Route path= "/equipos" element= { <ClubesOrg /> }/>
+              <Route path= "/equiposOrg/:id" element= { <VistaClubOrg /> }/>
               <Route path= "/equiposOrg" element= { <ClubesOrg /> }/>
               <Route path= "/roldepartidos" element= { <RolPartidos /> }/>
               <Route path= "/tabladeposiciones" element= { <TablaPosiciones /> }/>
