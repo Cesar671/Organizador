@@ -3,3 +3,6 @@ npm install @mui/icons-material
 npm install react-pro-sidebar@0.7.1 
 #npm install styled-components 
 npm install react-router-dom
+
+dependencias 2
+npm install @mui/x-data-grid
