@@ -1,7 +1,7 @@
 import React,{ useContext, useState } from 'react'
 import { Box, Button } from '@mui/material'
 import {Switch, FormControlLabel } from '@mui/material'
-import { GridView, FormatListBulleted  } from '@mui/icons-material'
+import { GridView, FormatListBulleted, Search  } from '@mui/icons-material'
 import { useTheme } from '@mui/material'
 import Card from '../components/Card'
 import FormRegistroEquipos from '../components/FormRegistroEquipos'
@@ -10,10 +10,16 @@ import { Add } from '@mui/icons-material'
 import { DataGrid } from '@mui/x-data-grid'
 import { Link } from 'react-router-dom'
 import { FullDataCtxt } from '../global/contexts/equipContext'
+import ButtonCustom from '../components/ButtonCustom'
 
 const ClubesOrg = () => {
   const { equiposN } = useContext(FullDataCtxt)
   const [ checked, setCheked ] = useState(false)
+  const [buscador, setBuscador] = useState("")
+  const [ datosEquipos, setDatosEquipos ] = useState(equiposN)
+
+  const handleSearch = (e) => setBuscador(e.target.value)
+
   const theme = useTheme()
   const columns = [
     { field: 'id', headerName: '#', flex: 0.1, disableColumnMenu: true },
@@ -85,8 +91,15 @@ const ClubesOrg = () => {
 
         />
       </Box>
+      <Box
+        sx={{
+          
+        }}
+      >
+        <input value = { buscador } onChange={ handleSearch } type='search' placeholder='buscar'/>
+        <ButtonCustom Icon={ Search } />
+      </Box>
       
-      <input type='search' placeholder='buscar'/>
     </Box>
     <Box
       sx = {{
@@ -96,9 +109,10 @@ const ClubesOrg = () => {
         alignItems: "initial",
       }}
     >
-      {(!checked) ? equiposN.map((item) => <Card id={ item.id } name= { item.name } image= { item.image } />):<DataGrid
+      {(!checked) ? datosEquipos.map((item) => <Card id={ item.id } name= { item.name } image= { item.image } />):
+            <DataGrid
                 disableColumnResize
-                rows={ equiposN }
+                rows={ datosEquipos }
                 columns={ columns }
                 pagination= {false}
                 componentsProps={{
@@ -107,17 +121,28 @@ const ClubesOrg = () => {
                     }
                 }}
                 sx={{
-                    "& .MuiDataGrid-root" :{
-                    backgroundColor: "#f5f5f5",
-                    textAlign: "center",
-                },
-                "& .MuiDataGrid-cell": {
+                        "& .MuiDataGrid-root" :{
+                        backgroundColor: "#f5f5f5",
+                        textAlign: "center",
+                    },
+                    "& .MuiDataGrid-cell": {
 
-                    borderColor: "black",
-                    border: "2px solid #ccc",
-                    textAlign: "center"
-                },
-                }}
+                        borderColor: "black",
+                        border: "2px solid #ccc",
+                        textAlign: "center"
+                    }, '& .MuiDataGrid-columnHeaderTitle': {
+                        fontWeight: 'bold',
+                        textAlign:"center"
+                    },
+                    '& .MuiDataGrid-columnHeader': {
+                        border: "2px solid #ccc",
+                        backgroundColor: "rgba(255,255,255,0.3)",
+                        textAlign:"center"
+                    },
+                    '& .MuiDataGrid-iconSeparator': {
+                        color: theme.palette.secondary.main, // Color de los íconos
+                    },
+                    }}
             /> }
     </Box>
     <Box
