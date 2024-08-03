@@ -25,7 +25,6 @@ function App() {
           <TopMenu selected = {selected} setSelected = {setSelected}/>
             <Routes>
               <Route path= "/" element= { <Home /> }/>
-              <Route path= "/equipos" element= { <Clubes /> }/>
               <Route path= "/equipos" element= { <ClubesOrg /> }/>
               <Route path= "/equiposOrg/:id" element= { <VistaClubOrg /> }/>
               <Route path= "/equiposOrg" element= { <ClubesOrg /> }/>
