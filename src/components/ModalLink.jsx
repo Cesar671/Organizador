@@ -25,7 +25,6 @@ const ModalCustom = ({ Component, nameButton, params }) => {
         </Box>
         <Modal
                 open={open}
-                onClose={handleClose}
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
             >

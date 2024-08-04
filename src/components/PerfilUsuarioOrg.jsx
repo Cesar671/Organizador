@@ -1,6 +1,6 @@
 import { Box, useTheme } from '@mui/material'
 import React, { useContext, useEffect, useState } from 'react'
-import { Edit, SaveAs, Warning  } from '@mui/icons-material'
+import { Edit, SaveAs, Warning, Close  } from '@mui/icons-material'
 import ModalCustom from './ModalIcon'
 import ConfirmDialog from './ConfirmDialog'
 import { FullDataCtxt } from '../global/contexts/equipContext'
@@ -90,11 +90,12 @@ const PerfilUsuarioOrg = ({params, close}) => {
                 alignItems: "end"
             }}
         >
+            <Close onClick = { close }/>
             <Box
 
                 sx={{
-                    width:"200px",
-                    height:"200px",
+                    width:"170px",
+                    height:"170px",
                     borderRadius:"100px",
                     overflow:"hidden",
                     display: "flex",

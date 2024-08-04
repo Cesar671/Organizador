@@ -1,7 +1,8 @@
 import React from 'react'
 import { Box, useTheme } from '@mui/material'
+import { Close } from '@mui/icons-material'
 
-const DT = () => {
+const DT = ({ close }) => {
     const theme = useTheme()
   return (
     <Box
@@ -38,6 +39,7 @@ const DT = () => {
                 alignItems: "end"
             }}
         >
+            <Close onClick = { close } />
             <Box
 
                 sx={{

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Modal } from '@mui/material';
 import { Box, Button, useTheme } from '@mui/material'
 
-const ModalCustom = ({ Component, nameButton, Icon }) => {
+const ModalCustom = ({ Component, nameButton, Icon, setResponse, text }) => {
   const [open, setOpen] = useState(false);
   const theme = useTheme()
   const handleOpen = () => setOpen(true);
@@ -28,7 +28,6 @@ const ModalCustom = ({ Component, nameButton, Icon }) => {
         </Button>
         <Modal
                 open={open}
-                onClose={handleClose}
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
             >
@@ -39,7 +38,7 @@ const ModalCustom = ({ Component, nameButton, Icon }) => {
                         transform: 'translate(-50%, -50%)',
                 }}        
                 >
-                    <Component />
+                    <Component close = { handleClose } text = { (text) && text } setResponse = { (setResponse) && setResponse }/>
                 </Box>
             </Modal>
   </>

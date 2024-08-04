@@ -35,7 +35,7 @@ const VistaClubOrg = () => {
     const handleImagen = (e) => {
 
     }
-
+    console.log(equipo.image.split("."))
     const [nombreJugador, setNombreJugador] = useState("")
     const [ci, setCi] = useState("")
     const [dateJugador, setDateJugador] = useState("")
@@ -53,7 +53,7 @@ const VistaClubOrg = () => {
     },[equiposN, jugadoresN])
     const addHandlerJugadores = () => {
         setNewJugadores([...newJugadores,{
-            id: players.length+10,
+            id: jugadoresN.length+10,
             nombre:nombreJugador,
             fechaRegistro:"20/14/24",
             carnetIdentidad: ci,
@@ -196,7 +196,7 @@ const VistaClubOrg = () => {
                     }}
                 >
                     <img 
-                        src={(equipo) && "../"+equipo.image }
+                        src={(equipo) && (equipo.image.split(".").length>1) ? ("../"+equipo.image) : equipo.image }
                         style={{
                             width:"200px",
                             height:"auto",

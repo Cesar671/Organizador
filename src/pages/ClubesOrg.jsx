@@ -1,4 +1,4 @@
-import React,{ useContext, useState } from 'react'
+import React,{ useContext, useEffect, useState } from 'react'
 import { Box, Button } from '@mui/material'
 import {Switch, FormControlLabel } from '@mui/material'
 import { GridView, FormatListBulleted, Search  } from '@mui/icons-material'
@@ -40,12 +40,28 @@ const ClubesOrg = () => {
         )
       },},
     { field: 'jugadores', headerName: 'Jugadores', flex: 0.1, disableColumnMenu: true },
-    { field: 'fechaRegistro', headerName: 'Fecha de Registro', flex:0.2, disableColumnMenu: true }
+    { field: 'fechaRegistro', headerName: 'Fecha de Registro', flex:0.2, disableColumnMenu: true },
+    { field: 'image', headerName: 'Foto', flex:0.1, disableColumnMenu: true,
+      renderCell: (params) => {
+      return (
+        <img
+          src = { "../"+params.value }
+          style={{
+              width: "24px",
+              height: "auto",
+              borderRadius: "20px",        
+          }} 
+        />
+      )
+    },
+  },
   ];
   const handleChange = (e) => {
     setCheked(e.target.checked)
   }
-
+  useEffect(() => {
+    setDatosEquipos(equiposN)
+  },[equiposN])
   return (
 
     <Box
@@ -107,6 +123,7 @@ const ClubesOrg = () => {
         flexWrap: "wrap",
         justifyContent: "left",
         alignItems: "initial",
+        width: "100%"
       }}
     >
       {(!checked) ? datosEquipos.map((item) => <Card id={ item.id } name= { item.name } image= { item.image } />):
