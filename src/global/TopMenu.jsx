@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState} from 'react'
 import { Box } from '@mui/material'
 import { AccountCircle } from "@mui/icons-material"
 import { Link } from 'react-router-dom'
 
 const TopNav = ({ data, setSelected }) => {
 
-    return (<Box
+    return (
+    <Box
         sx = {{
             display: "flex",
             fontSize: "25px"
@@ -17,7 +18,8 @@ const TopNav = ({ data, setSelected }) => {
         inicio
     </Link>
         /{(data.length > 0) && data.map((palabra, index) => <><Link to={ data.slice(0, data.length-index).join("/") }>{ palabra }</Link>/</>) }
-    </Box>)
+    </Box>
+    )
 }
 
 const TopMenu = ({ selected, setSelected }) => {
@@ -42,8 +44,8 @@ const TopMenu = ({ selected, setSelected }) => {
             sx = {{
                 display: "flex",
                 alignItems: "center",
-                gap: "5px",
-
+                gap: "5px", 
+                
             }}
         >
             Don Vlady
