@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { equipos } from './equipos';
 import { Facebook, Instagram, Twitter, WhatsApp, ArrowBack } from '@mui/icons-material';
 import entrenador from './imagenes/coach.jpg';
-import qrWhatsapp from './imagenes/qr-code.png'; // Asegúrate de tener esta imagen
+import qrWhatsapp from './imagenes/qr-code.png';
 
 const EquipoDetalle = () => {
   const { equipoId } = useParams();
@@ -23,7 +23,7 @@ const EquipoDetalle = () => {
   };
 
   return (
-    <Box sx={{ padding: 2, backgroundColor: '#E6F0FF' }}>
+    <Box sx={{ padding: 2}}>
       <Box sx={{ display: 'flex', justifyContent: 'space-around', marginBottom: 4 }}>
         {/* Card del equipo */}
         <Card sx={{ backgroundColor: '#74C0FC', color: '#0a2540', padding: 2, maxWidth: 250, boxShadow: 3, borderRadius: 2, maxHeight: 450 }}>
@@ -136,7 +136,7 @@ const EquipoDetalle = () => {
         </IconButton>
       </Box>
 
-      {/* Botón para regresar a la lista de equipos con animación */}
+      {/* Botón para regresar a equipos*/}
       <Box sx={{ display: 'flex', justifyContent: 'rigth', marginTop:-6}}>
         <IconButton 
           sx={{ backgroundColor: '#0a2540', color: '#74C0FC', '&:hover': { transform: 'scale(1.1)' }, transition: 'transform 0.3s' }}

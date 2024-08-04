@@ -42,6 +42,7 @@ function App() {
               <Route path= "/noticias" element= { <Noticias /> }/>
               <Route path="/equipos/:equipoId" element={<EquipoDetalle />} />
               <Route path="/equipos/:equipoId/plantilla" element={<Planilla />} />
+              <Route path="/equiposOrg/:id" element={<VistaClubOrg/>} />
             </Routes>
           </div>
         </FullDataCtxt.Provider>    
