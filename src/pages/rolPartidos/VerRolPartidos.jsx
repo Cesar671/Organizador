@@ -27,6 +27,18 @@ export const VerRolPartidos = () => {
   }, []);
 
   useEffect(() => {
+    if (teams.length > 0) {
+      const randomTeam1 = teams[Math.floor(Math.random() * teams.length)];
+      let randomTeam2;
+      do {
+        randomTeam2 = teams[Math.floor(Math.random() * teams.length)];
+      } while (randomTeam2 === randomTeam1);
+
+      setCurrentMatch({ team1: randomTeam1.name, team2: randomTeam2.name });
+    }
+  }, [teams]);
+
+  useEffect(() => {
     const intervalId = setInterval(() => {
       const randomTeam1 = teams[Math.floor(Math.random() * teams.length)];
       let randomTeam2;
@@ -60,10 +72,10 @@ export const VerRolPartidos = () => {
   };
 
   return (
-    <div style={{ width: "100%", height: "100%", overflowY: "auto", backgroundColor:'#'}}>
+    <div style={{ width: "100%", height: "90%", overflowY: "auto", backgroundColor: '#' }}>
       <h1>Rol de Partidos</h1>
       <div className="d-flex mx-5">
-        <div className="principal rounded-3"style={{boxShadow: "0 4px 6px rgba(0, 0, 0, 0.6)"}}>
+        <div className="principal rounded-3" style={{ boxShadow: "0 4px 6px rgba(0, 0, 0, 0.6)" }}>
           <h1 className="titulo text-white rounded-top-3">
             {selectedTeam1?.name} vs {selectedTeam2?.name}
           </h1>

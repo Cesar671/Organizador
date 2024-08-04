@@ -7,7 +7,7 @@ import TopMenu from './global/TopMenu';
 import ClubesOrg from './pages/ClubesOrg';
 import Home from './pages/Home';
 import TablaPosiciones from './pages/TablaPosiciones';
-import PartidosDelDia from './pages/PartidosDelDia';
+import PartidosDelDia from './pages/PartidosDelDia/PartidosDelDia';
 import Jugadores from './pages/Jugadores';
 import Reglamento from './pages/Reglamento';
 import Noticias from './pages/Noticias';

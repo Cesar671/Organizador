@@ -1,0 +1,64 @@
+.partidos-del-dia {
+    font-family: Arial, sans-serif;
+  }
+  
+  .partido {
+    border: 1px solid #ddd;
+    margin: 10px 0;
+    padding: 10px;
+  }
+  
+  .partido-header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+  }
+  
+  .partido-gender.varones {
+    color: blue;
+  }
+  
+  .partido-gender.damas {
+    color: pink;
+  }
+  
+  .partido-body {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .team-name {
+    font-size: 1.2em;
+  }
+  
+  .team-score {
+    font-size: 1.5em;
+  }
+  
+  .partido-status {
+    text-align: right;
+    font-weight: bold;
+  }
+  
+  .partido-status.en-juego {
+    color: green;
+  }
+  
+  .partido-status.concluido {
+    color: gray;
+  }
+  
+  .partido-status.en-espera {
+    color: red;
+  }
+  
+  .upcoming-matches {
+    margin-top: 20px;
+  }
+  
