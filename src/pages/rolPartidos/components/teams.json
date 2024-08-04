@@ -1,0 +1,152 @@
+[
+  {
+    "name": "Club San Martin",
+    "logo": "/club1.webp",
+    "players": [
+      "Carlos Martínez",
+      "Jorge Pérez",
+      "Luis Gómez",
+      "Miguel Sánchez",
+      "Andrés Rodríguez",
+      "Eduardo Fernández",
+      "Raúl López",
+      "Hugo Ramírez"
+    ],
+    "coach": "Mario Gutiérrez"
+  },
+  {
+    "name": "Club Olympic",
+    "logo": "/club12.jpeg",
+    "players": [
+      "Ricardo Torres",
+      "Juan Jiménez",
+      "Alberto Ruiz",
+      "Fernando Castro",
+      "Pablo Morales",
+      "Adrián Vargas",
+      "David Rojas",
+      "Iván Romero"
+    ],
+    "coach": "Carlos Delgado"
+  },
+  {
+    "name": "Club Vipers",
+    "logo": "/club3.jpg",
+    "players": [
+      "Manuel Aguilar",
+      "Alejandro Mendoza",
+      "Francisco Ortiz",
+      "Diego Guerrero",
+      "Sebastián Vázquez",
+      "José Peña",
+      "Roberto Castillo",
+      "Héctor Ramos"
+    ],
+    "coach": "Luis Navarro"
+  },
+  {
+    "name": "Club Fenix",
+    "logo": "/club4.jpg",
+    "players": [
+      "Gustavo Herrera",
+      "Rodrigo Castro",
+      "Emilio Domínguez",
+      "Felipe Rivas",
+      "Santiago Blanco",
+      "Julio Cabrera",
+      "Cristian Campos",
+      "Marcos Esquivel"
+    ],
+    "coach": "Miguel Serrano"
+  },
+  {
+    "name": "Club Albert Einstein",
+    "logo": "/equipo2.png",
+    "players": [
+      "Gabriel Fuentes",
+      "Tomás Guzmán",
+      "Antonio Cortés",
+      "Mario Paredes",
+      "Ernesto Luna",
+      "Adolfo Rivera",
+      "Lucas Figueroa",
+      "Javier Medina"
+    ],
+    "coach": "Francisco Hernández"
+  },
+  {
+    "name": "Club Don Bosco",
+    "logo": "/equipo1.png",
+    "players": [
+      "Martín Silva",
+      "Nicolás Reyes",
+      "Ramiro Flores",
+      "Ignacio León",
+      "Esteban Molina",
+      "Raúl Salazar",
+      "Sergio Vargas",
+      "Claudio Romero"
+    ],
+    "coach": "Alejandro Núñez"
+  },
+  {
+    "name": "Club Panteras",
+    "logo": "/club10.jpg",
+    "players": [
+      "Leonardo Pérez",
+      "Joaquín Soto",
+      "Pedro Arias",
+      "Vicente Morales",
+      "Simón Cárdenas",
+      "Armando Valdez",
+      "Oscar Acosta",
+      "Humberto Escobar"
+    ],
+    "coach": "Roberto Castillo"
+  },
+  {
+    "name": "Club Vinto",
+    "logo": "/equipo3.png",
+    "players": [
+      "Rubén Cáceres",
+      "Hernán Silva",
+      "Benjamín Flores",
+      "Valentín Mena",
+      "Octavio Duarte",
+      "Federico Palacios",
+      "Adrián Aguirre",
+      "Rodrigo Estrada"
+    ],
+    "coach": "Jorge Salinas"
+  },
+  {
+    "name": "Club Aleman",
+    "logo": "/club6.jpeg",
+    "players": [
+      "Rubén Cáceres",
+      "Hernán Silva",
+      "Benjamín Flores",
+      "Valentín Mena",
+      "Octavio Duarte",
+      "Federico Palacios",
+      "Adrián Aguirre",
+      "Rodrigo Estrada"
+    ],
+    "coach": "Jorge Salinas"
+  },
+  {
+    "name": "Club Elver",
+    "logo": "/club13.jpeg",
+    "players": [
+      "Rubén Cáceres",
+      "Hernán Silva",
+      "Benjamín Flores",
+      "Valentín Mena",
+      "Octavio Duarte",
+      "Federico Palacios",
+      "Adrián Aguirre",
+      "Rodrigo Estrada"
+    ],
+    "coach": "Jorge Salinas"
+  }
+]

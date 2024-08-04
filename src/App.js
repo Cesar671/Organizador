@@ -6,12 +6,14 @@ import { Routes, Route } from 'react-router-dom';
 import TopMenu from './global/TopMenu';
 import ClubesOrg from './pages/ClubesOrg';
 import Home from './pages/Home';
-import RolPartidos from './pages/RolPartidos';
 import TablaPosiciones from './pages/TablaPosiciones';
-import PartidosDelDia from './pages/PartidosDelDia';
+import PartidosDelDia from './pages/PartidosDelDia/PartidosDelDia';
 import Jugadores from './pages/Jugadores';
 import Reglamento from './pages/Reglamento';
 import Noticias from './pages/Noticias';
+import { RolPartidos2 } from './pages/rolPartidos/RolPartidos2';
+import { VerRolPartidos } from './pages/rolPartidos/VerRolPartidos';
+import { EquipoVs } from './pages/rolPartidos/EquipoVs';
 import VistaClubOrg from './pages/VistaClubOrg';
 import { FullDataCtxt } from './global/contexts/equipContext';
 import { equipos, jugadores } from './data';
@@ -31,7 +33,9 @@ function App() {
               <Route path= "/equipos" element= { <ClubesOrg /> }/>
               <Route path= "/equiposOrg/:id" element= { <VistaClubOrg /> }/>
               <Route path= "/equiposOrg" element= { <ClubesOrg /> }/>
-              <Route path= "/roldepartidos" element= { <RolPartidos /> }/>
+              <Route path= "/roldepartidos" element= { <RolPartidos2 /> }/>
+              <Route path= "/roldepartidos/verroldepartidos" element= { <VerRolPartidos /> }/>
+              <Route path= "/roldepartidos/verroldepartidos/Equipo" element= { <EquipoVs /> }/>
               <Route path= "/tabladeposiciones" element= { <TablaPosiciones /> }/>
               <Route path= "/partidosdeldia" element= { <PartidosDelDia /> }/>
               <Route path= "/jugadores" element= { <Jugadores /> }/>
