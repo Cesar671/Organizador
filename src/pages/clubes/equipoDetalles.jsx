@@ -137,9 +137,9 @@ const EquipoDetalle = () => {
       </Box>
 
       {/* Botón para regresar a la lista de equipos con animación */}
-      <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: 4 }}>
+      <Box sx={{ display: 'flex', justifyContent: 'rigth', marginTop:-6}}>
         <IconButton 
-          sx={{ backgroundColor: '#0a2540', color: '#fff', '&:hover': { transform: 'scale(1.1)' }, transition: 'transform 0.3s' }}
+          sx={{ backgroundColor: '#0a2540', color: '#74C0FC', '&:hover': { transform: 'scale(1.1)' }, transition: 'transform 0.3s' }}
           component={Link}
           to="/equipos"
         >

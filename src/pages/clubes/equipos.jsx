@@ -16,13 +16,13 @@ export const equipos = [
     categoria: 'Juvenil', 
     ciudad: 'Santa Cruz',
     descripcion:"El Fenix cuenta con categorias juveniles y cadetes, es campeon de la Liga Garra, actualmente tiene 45 jugadores tanto en damas como varones.Aferrate a la victoria hazte que ella se aleje. " },
-  { id: 2, nombre: 'Club Olympic', logo: club1 , categoria: 'Adultos', ciudad: 'La Paz' },
-  { id: 3, nombre: 'Club Vipers', logo: club3 , categoria: 'Juvenil', ciudad: 'Cochabamba' },
-  { id: 4, nombre: 'Club Fenix', logo: club4, categoria: 'Adultos', ciudad: 'Santa Cruz' },
-  { id: 5, nombre: 'Club Albert Einstein', logo:club1 , categoria: 'Juvenil', ciudad: 'Sucre' },
-  { id: 6, nombre: 'Club Don Bosco', logo:club3 , categoria: 'Adultos', ciudad: 'Santa Cruz' },
-  { id: 7, nombre: 'Club Panteras', logo: club2, categoria: 'Juvenil', ciudad: 'Tarija' },
-  { id: 8, nombre: 'Club Vinto', logo:club1 , categoria: 'Adultos', ciudad: 'La Paz' },
+  { id: 2, nombre: 'Club Olympic', logo: club1 , categoria: 'Adultos', ciudad: 'La Paz',descripcion:"El Club Oplympic cuenta con categorias juveniles y cadetes, es campeon de la Liga Garra, actualmente tiene 45 jugadores tanto en damas como varones.Aferrate a la victoria hazte que ella se aleje. " },
+  { id: 3, nombre: 'Club Vipers', logo: club3 , categoria: 'Juvenil', ciudad: 'Cochabamba',descripcion:"El club vipers cuenta con categorias juveniles y cadetes, es campeon de la Liga Garra, actualmente tiene 45 jugadores tanto en damas como varones.Aferrate a la victoria hazte que ella se aleje. " },
+  { id: 4, nombre: 'Club Fenix', logo: club4, categoria: 'Adultos', ciudad: 'Santa Cruz',descripcion:"El Fenix cuenta con categorias juveniles y cadetes, es campeon de la Liga Garra, actualmente tiene 45 jugadores tanto en damas como varones.Aferrate a la victoria hazte que ella se aleje. " },
+  { id: 5, nombre: 'Club Albert Einstein', logo:club1 , categoria: 'Juvenil', ciudad: 'Sucre',descripcion:"El Club Albert Einstein cuenta con categorias juveniles y cadetes, es campeon de la Liga Garra, actualmente tiene 45 jugadores tanto en damas como varones.Aferrate a la victoria hazte que ella se aleje. " },
+  { id: 6, nombre: 'Club Don Bosco', logo:club3 , categoria: 'Adultos', ciudad: 'Santa Cruz',descripcion:"El Club Don Bosco cuenta con categorias juveniles y cadetes, es campeon de la Liga Garra, actualmente tiene 45 jugadores tanto en damas como varones.Aferrate a la victoria hazte que ella se aleje. "},
+  { id: 7, nombre: 'Club Panteras', logo: club2, categoria: 'Juvenil', ciudad: 'Tarija',descripcion:"El club Panteras cuenta con categorias juveniles y cadetes, es campeon de la Liga Garra, actualmente tiene 45 jugadores tanto en damas como varones.Aferrate a la victoria hazte que ella se aleje. "},
+  { id: 8, nombre: 'Club Vinto', logo:club1 , categoria: 'Adultos', ciudad: 'La Paz',descripcion:"El Club Vinto cuenta con categorias juveniles y cadetes, es campeon de la Liga Garra, actualmente tiene 45 jugadores tanto en damas como varones.Aferrate a la victoria hazte que ella se aleje. "},
 ];
 
 const Equipos = () => {
