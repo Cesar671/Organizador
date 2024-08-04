@@ -6,6 +6,7 @@ import { equipos } from './equipos';
 import { Facebook, Instagram, Twitter, WhatsApp, ArrowBack } from '@mui/icons-material';
 import entrenador from './imagenes/coach.jpg';
 import qrWhatsapp from './imagenes/qr-code.png';
+ 
 
 const EquipoDetalle = () => {
   const { equipoId } = useParams();
@@ -15,7 +16,7 @@ const EquipoDetalle = () => {
     return <Typography variant="h6">Equipo no encontrado</Typography>;
   }
 
-  // Ejemplo de un jugador
+  
   const jugador = {
     nombre: 'DT Freddy Moya',
     imagen: entrenador,
@@ -25,6 +26,8 @@ const EquipoDetalle = () => {
   return (
     <Box sx={{ padding: 2}}>
       <Box sx={{ display: 'flex', justifyContent: 'space-around', marginBottom: 4 }}>
+      
+        
         {/* Card del equipo */}
         <Card sx={{ backgroundColor: '#74C0FC', color: '#0a2540', padding: 2, maxWidth: 250, boxShadow: 3, borderRadius: 2, maxHeight: 450 }}>
           <CardMedia

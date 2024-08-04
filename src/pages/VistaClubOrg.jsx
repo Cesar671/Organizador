@@ -164,7 +164,7 @@ const VistaClubOrg = () => {
                         
                     }}
                 >
-                    {(!editMode) ? (equipo) && <h1>{equipo.name}<Edit sx={{color:"blue"}} onClick= { handleChange } /></h1> : 
+                    {(!editMode) ? (equipo) && <h1>{equipo.name}<Edit sx={{color:"#1E90FF"}} onClick= { handleChange } /></h1> : 
                                             <strong style={{marginTop:"50px", display:"flex", alignItems:"center"}}>
                                                 Nombre:<input type='text' style={{height:"25px"}} value={ nombre } onChange={handleNombre} />
                                                 <ModalCustomIcon Icon={ Save } setResponse={ setResponse }  Component={ ConfirmDialog } text="¿Seguro que quiere guardar los cambios?"/>

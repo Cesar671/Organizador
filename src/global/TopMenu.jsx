@@ -1,33 +1,10 @@
-import React, { useEffect, useState} from 'react'
+import React from 'react'
 import { Box } from '@mui/material'
 import { AccountCircle } from "@mui/icons-material"
-import { Link } from 'react-router-dom'
+import MigaDePan from '../components/MigaDePan'
 
-const TopNav = ({ data, setSelected }) => {
 
-    return (
-    <Box
-        sx = {{
-            display: "flex",
-            fontSize: "25px"
-        }}
-    >
-    <Link onClick={ () => {
-        setSelected("inicio")
-    }} to="/">
-        inicio
-    </Link>
-        /{(data.length > 0) && data.map((palabra, index) => <><Link to={ data.slice(0, data.length-index).join("/") }>{ palabra }</Link>/</>) }
-    </Box>
-    )
-}
-
-const TopMenu = ({ selected, setSelected }) => {
-    const [ dir, setDir ] = useState(null)
-    useEffect(() => {
-        const dirs = window.location.href.split("/").slice(3)    
-        setDir(dirs)  
-    },[selected])
+const TopMenu = () => {
   return (
     <Box
         sx = {{
@@ -39,13 +16,13 @@ const TopMenu = ({ selected, setSelected }) => {
             alignItems: "center"
         }}
     >
-        <div>{(dir) && (<TopNav setSelected={setSelected} data={dir} />) }</div>
+        <MigaDePan />
         <Box
             sx = {{
                 display: "flex",
                 alignItems: "center",
-                gap: "5px", 
-                
+                gap: "5px",
+
             }}
         >
             Don Vlady
