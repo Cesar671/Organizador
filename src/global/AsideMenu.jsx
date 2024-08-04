@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Typography, Box, useTheme } from "@mui/material"
 import { ProSidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar'
 import { DarkModeOutlined, LightModeOutlined, Menu as MenuIcon} from "@mui/icons-material"
@@ -6,8 +6,10 @@ import { HouseOutlined, GroupsSharp, GroupOutlined , Accessibility, SignLanguage
 import 'react-pro-sidebar/dist/css/styles.css';
 import { ModeContext } from '../theme/modeContext';
 import { Link } from 'react-router-dom';
+import { FullDataCtxt } from './contexts/equipContext';
 
-const MenuItemCustom = ({Icon, title, link, setSelected, selected}) => {
+const MenuItemCustom = ({Icon, title, link}) => {
+  const {selected, setSelected} = useContext(FullDataCtxt)
   return (<>
     <MenuItem
     icon={ <Icon />}
@@ -24,8 +26,8 @@ const MenuItemCustom = ({Icon, title, link, setSelected, selected}) => {
   )
 }
 
-const AsideMenu = ({ selected, setSelected }) => {
-
+const AsideMenu = () => {
+  const {selected, setSelected} = useContext(FullDataCtxt)
   const [ collapsed, setCollapsed ] = React.useState(true)
   const theme = useTheme()
   const { modeContext } = React.useContext(ModeContext);
