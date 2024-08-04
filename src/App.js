@@ -24,10 +24,10 @@ function App() {
   return (
     <Muitheme>
       <div className="App">
-        <FullDataCtxt.Provider value={{equiposN, jugadoresN, setEquipos, setJugadores}}>
-          <AsideMenu selected = {selected} setSelected = {setSelected}/>
+        <FullDataCtxt.Provider value={{equiposN, jugadoresN, setEquipos, setJugadores, selected, setSelected}}>
+          <AsideMenu/>
           <div className='MainContainer'>
-          <TopMenu selected = {selected} setSelected = {setSelected}/>
+            <TopMenu/>
             <Routes>
               <Route path= "/" element= { <Home /> }/>
               <Route path= "/equipos" element= { <ClubesOrg /> }/>
