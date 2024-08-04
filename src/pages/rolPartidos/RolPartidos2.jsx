@@ -19,14 +19,13 @@ export const RolPartidos2 = () => {
   useEffect(() => {
     setTeams(teamsData);
   }, []);
-  
 
   const handleButtonClick = () => {
     navigate("/roldepartidos/verroldepartidos");
   };
 
   return (
-    <div className="container mt-4" style={{overflowX:'auto'}}>
+    <div className="container mt-4" style={{ overflowX: 'auto' }}>
       <h2 className="fw-bold">Lista de equipos</h2>
       <Button className="btnC m-4" onClick={handleButtonClick}>
         Ver Rol de Partidos
@@ -41,6 +40,7 @@ export const RolPartidos2 = () => {
             height="200px"
             fontSize="20px"
             checkIfClickable={checkIfClickable}
+            tooltipMessage="Generar partido"
           />
         ))}
       </div>

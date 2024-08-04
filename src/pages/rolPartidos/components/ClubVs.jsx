@@ -126,7 +126,7 @@ export const ClubVs = ({ name, logo, equiposVS, onUpdateEquipo }) => {
       ))}
 
       {selectedEquipo && (
-        <Modal show={showEditModal} onHide={handleCloseEditModal}>
+        <Modal show={showEditModal} onHide={handleCloseEditModal} className="text-secondary">
           <Modal.Header closeButton>
             <Modal.Title>Editar Datos del Partido</Modal.Title>
           </Modal.Header>

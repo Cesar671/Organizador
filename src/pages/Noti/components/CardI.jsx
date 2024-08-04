@@ -28,7 +28,7 @@ const styles = {
     maxWidth: '800px',
     maxHeight: '500px',
     margin: '20px auto',
-    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+    boxShadow: '0 4px 6px rgba(0, 0, 0, 0.6)',
   },
   image: {
     width: '100%',

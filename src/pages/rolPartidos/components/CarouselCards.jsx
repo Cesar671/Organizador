@@ -1,15 +1,14 @@
-// src/components/CarouselCards.js
 import React, { useState } from "react";
 import { Carousel } from "react-bootstrap";
 import { Cards } from "./cards";
 
 const checkIfClickable = () => {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(false);
-      }, 1000);
-    });
-  };
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(true);
+    }, 1000);
+  });
+};
 
 const CarouselCards = ({ teams, onSelect }) => {
   const [selectedIndex, setSelectedIndex] = useState(null);
@@ -20,7 +19,7 @@ const CarouselCards = ({ teams, onSelect }) => {
   };
 
   return (
-    <Carousel onSelect={handleSelect}>
+    <Carousel onSelect={handleSelect} variant="dark"  interval={null} >
       {teams.map((team, index) => (
         <Carousel.Item key={index}>
           <Cards
@@ -30,6 +29,8 @@ const CarouselCards = ({ teams, onSelect }) => {
             height="200px"
             fontSize="20px"
             checkIfClickable={checkIfClickable}
+            tooltipMessage="Seleccionar Equipo"
+            disableModal={true}
           />
         </Carousel.Item>
       ))}

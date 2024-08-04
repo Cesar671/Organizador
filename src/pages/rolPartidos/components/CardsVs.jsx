@@ -5,7 +5,7 @@ export const CardsVs = ({ name1, logo1, name2, logo2 }) => {
   const checkIfClickable = () => {
     return new Promise((resolve) => {
       setTimeout(() => {
-        resolve(false);
+        resolve(true);
       }, 1000);
     });
   };
@@ -20,9 +20,11 @@ export const CardsVs = ({ name1, logo1, name2, logo2 }) => {
             name={name1}
             logo={logo1}
             width="120px"
-            height="140px"
+            height="120px"
             fontSize="10px"
             checkIfClickable={checkIfClickable}
+            tooltipMessage="Mostrar"
+            disableModal={true}
           />
         </div>
         <div className="mx-2">
@@ -30,9 +32,11 @@ export const CardsVs = ({ name1, logo1, name2, logo2 }) => {
             name={name2}
             logo={logo2}
             width="120px"
-            height="140px"
+            height="120px"
             fontSize="10px"
             checkIfClickable={checkIfClickable}
+            tooltipMessage="Mostrar"
+            disableModal={true}
           />
         </div>
       </div>

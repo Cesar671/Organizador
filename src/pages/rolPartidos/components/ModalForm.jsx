@@ -72,7 +72,7 @@ const ModalForm = ({ show, handleClose, name, logo }) => {
 
   return (
     <>
-      <Modal show={showMainModal} onHide={handleClose} size="md">
+      <Modal show={showMainModal} onHide={handleClose} size="md" className="text-secondary">
         <Modal.Header closeButton>
           <Modal.Title>Agregar Partido para {name}</Modal.Title>
         </Modal.Header>
@@ -145,7 +145,7 @@ const ModalForm = ({ show, handleClose, name, logo }) => {
         </Modal.Footer>
       </Modal>
 
-      <Modal show={showErrorModal} onHide={handleCloseErrorModal} size="md">
+      <Modal show={showErrorModal} onHide={handleCloseErrorModal} size="md" className="text-secondary">
         <Modal.Header closeButton>
           <Modal.Title>Ingrese todos los campos</Modal.Title>
         </Modal.Header>

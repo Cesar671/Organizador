@@ -1,47 +1,46 @@
 {
-    "cards": [
-      {
-        "image": "/noti1.jpeg",
-        "date": "2 DE AGOSTO DE 2024",
-        "title": "SERENA WILLIAMS Y EL PRESIDENTE MACRON VISITAN ",
-        "description": "El voleibol de playa nos regala otro día espectacular. Serena Williams, la leyenda del tenis, y el presidente francés Emmanuel Macron, hicieron una visita al emblemático estadio ubicado en las cercanías de la Torre Eiffel. El evento, organizado por la Federación Internacional de Voleibol (FIVB), celebró no solo la belleza del deporte sino también la unión de diferentes disciplinas deportivas y figuras públicas en un escenario de gran relevancia histórica. La presencia de Serena y Macron destacó la importancia del apoyo institucional y el papel inspirador de los atletas en la promoción del voleibol de playa a nivel mundial.",
-        "tags": ["VOLEIBOL DE PLAYA", "FIVB", "HOGAR", "PRESIDENTE"]
-      },
-      {
-        "image": "/noti2.jpeg",
-        "date": "15 DE JULIO DE 2024",
-        "title": "BRASIL SE CORONA CAMPEÓN DEL MUNDIAL DE VOLEIBOL 2024",
-        "description": "El equipo de voleibol de Brasil se llevó la victoria en la final del Campeonato Mundial de Voleibol 2024, celebrada en Roma, Italia. Fue un partido emocionante donde Brasil derrotó a Polonia en cinco sets intensos. Este triunfo marca la décima vez que Brasil gana el título mundial, consolidando su posición como una de las potencias más dominantes en el voleibol internacional. Los fanáticos celebraron con entusiasmo, y la victoria fue recibida con gran alegría en todo el país sudamericano.",
-        "tags": ["MUNDIAL DE VOLEIBOL", "BRASIL", "POLONIA", "CAMPEONATO"]
-      },
-      {
-        "image": "/noti3.jpeg",
-        "date": "10 DE JUNIO DE 2024",
-        "title": "COMIENZA LA LIGA NACIONAL DE VOLEIBOL 2024",
-        "description": "La Liga Nacional de Voleibol 2024 ha comenzado con un espectacular evento de inauguración en Ciudad de México. Equipos de todo el país se reunieron para competir por el prestigioso título nacional. La ceremonia de apertura contó con actuaciones musicales, fuegos artificiales y la presencia de destacadas figuras del deporte. Se espera que esta temporada sea una de las más competitivas de los últimos años, con equipos reforzados y nuevos talentos emergiendo en la escena del voleibol mexicano.",
-        "tags": ["LIGA NACIONAL", "CIUDAD DE MÉXICO", "INAUGURACIÓN", "VOLEIBOL"]
-      },
-      {
-        "image": "/noti4.jpeg",
-        "date": "5 DE MAYO DE 2024",
-        "title": "EXITOSO TORNEO DE VOLEIBOL JUVENIL EN BARCELONA",
-        "description": "El Torneo de Voleibol Juvenil en Barcelona concluyó con gran éxito, reuniendo a jóvenes talentos de toda Europa. Este evento anual es una plataforma clave para identificar y nutrir futuras estrellas del voleibol. Los equipos juveniles mostraron habilidades impresionantes y un espíritu competitivo notable. Además de los partidos, el torneo ofreció talleres y clínicas dirigidas por entrenadores profesionales, proporcionando una experiencia educativa y enriquecedora para todos los participantes.",
-        "tags": ["VOLEIBOL JUVENIL", "BARCELONA", "TORNEO", "FUTUROS TALENTOS"]
-      },
-      {
-        "image": "/noti5.jpeg",
-        "date": "20 DE ABRIL DE 2024",
-        "title": "EQUIPOS DE VOLEIBOL INICIAN ENTRENAMIENTOS DE PRETEMPORADA",
-        "description": "Los equipos de voleibol han comenzado sus entrenamientos de pretemporada, preparándose para los próximos campeonatos nacionales e internacionales. Las sesiones de entrenamiento están enfocadas en mejorar la condición física, la técnica y la estrategia de juego. Los entrenadores están optimistas sobre las posibilidades de sus equipos y esperan que el arduo trabajo en la pretemporada se refleje en un desempeño destacado en los torneos futuros.",
-        "tags": ["ENTRENAMIENTO", "PRETEMPORADA", "VOLEIBOL", "EQUIPOS"]
-      },
-      {
-        "image": "/noti6.jpeg",
-        "date": "1 DE MARZO DE 2024",
-        "title": "LA FIVB ANUNCIA NUEVAS REGLAS PARA EL VOLEIBOL DE PLAYA",
-        "description": "En una reciente conferencia de prensa, la Federación Internacional de Voleibol (FIVB) anunció una serie de nuevas reglas para el voleibol de playa que se implementarán a partir de la próxima temporada. Estas reglas incluyen cambios en el formato de puntuación, la duración de los sets y modificaciones en el reglamento de tiempo muerto. El objetivo de estas reformas es hacer el juego más dinámico y atractivo para los espectadores. La FIVB también destacó su compromiso continuo con el desarrollo y la promoción del voleibol de playa en todo el mundo.",
-        "tags": ["FIVB", "VOLEIBOL DE PLAYA", "REGLAS", "CONFERENCIA"]
-      }
-    ]
-  }
-  
+  "cards": [
+    {
+      "image": "/noticia1.jpeg",
+      "date": "2 DE AGOSTO DE 2024",
+      "title": "EL PRESIDENTE MACRON VISITAN EL ESTADIO DE VOLEIBOL EN COCHABAMBA",
+      "description": "El voleibol en Cochabamba ha sido testigo de un evento memorable ,el presidente  visitaron el emblemático estadio de voleibol en Cochabamba. Este evento, organizado por la Federación Internacional de Voleibol (FIVB), celebró la unión de figuras destacadas en el escenario deportivo local. La presencia de Serena y Macron subrayó el apoyo institucional y el impacto positivo de los atletas en la promoción del voleibol en Cochabamba y a nivel mundial.",
+      "tags": ["VOLEIBOL COCHABAMBA", "FIVB", "SERENA WILLIAMS", "MACRON"]
+    },
+    {
+      "image": "/noticia2.jpeg",
+      "date": "15 DE JULIO DE 2024",
+      "title": "CELEBRACIONES EN COCHABAMBA POR EL TRIUNFO DE BRASIL EN EL MUNDIAL DE VOLEIBOL 2024",
+      "description": "El Campeonato Mundial de Voleibol 2024, celebrado en Roma, Italia, vio a Brasil coronarse campeón. El equipo brasileño venció a Polonia en una emocionante final. En Cochabamba, los fanáticos del voleibol local celebraron el éxito de Brasil, mostrando su apoyo a los equipos internacionales y reconociendo la influencia de este triunfo en el crecimiento del voleibol en la región.",
+      "tags": ["MUNDIAL DE VOLEIBOL", "BRASIL", "POLONIA", "CELEBRACIONES"]
+    },
+    {
+      "image": "/noticia3.jpeg",
+      "date": "10 DE JUNIO DE 2024",
+      "title": "INICIO DE LA LIGA NACIONAL DE VOLEIBOL 2024 EN COCHABAMBA",
+      "description": "La temporada 2024 de la Liga Nacional de Voleibol comenzó con una destacada inauguración en Cochabamba. Equipos de todo el país se reúnen en la ciudad para competir por el título nacional. La apertura del torneo incluyó eventos locales y un gran apoyo de la comunidad cochabambina. La temporada promete ser emocionante, con equipos mostrando su talento y determinación en el escenario local.",
+      "tags": ["LIGA NACIONAL", "COCHABAMBA", "INAUGURACIÓN", "VOLEIBOL"]
+    },
+    {
+      "image": "/noticia4.jpg",
+      "date": "5 DE MAYO DE 2024",
+      "title": "TORNEO DE VOLEIBOL JUVENIL EN COCHABAMBA: UNA PLATAFORMA PARA FUTURAS ESTRELLAS",
+      "description": "El Torneo de Voleibol Juvenil en Cochabamba concluyó con gran éxito, destacando a jóvenes talentos de toda Bolivia. Este evento anual es crucial para identificar y apoyar a las futuras estrellas del voleibol. Los participantes demostraron habilidades impresionantes y el torneo ofreció talleres y clínicas dirigidas por expertos locales, proporcionando una experiencia enriquecedora para todos los involucrados.",
+      "tags": ["VOLEIBOL JUVENIL", "COCHABAMBA", "TORNEO", "FUTUROS TALENTOS"]
+    },
+    {
+      "image": "/noti5.jpeg",
+      "date": "20 DE ABRIL DE 2024",
+      "title": "ENTRENAMIENTOS DE PRETEMPORADA EN COCHABAMBA: PREPARACIÓN PARA LA NUEVA TEMPORADA",
+      "description": "Los equipos de voleibol en Cochabamba han comenzado sus entrenamientos de pretemporada para los próximos campeonatos. Las sesiones están enfocadas en mejorar la condición física, técnica y estrategia de los jugadores. Los entrenadores locales están optimistas sobre el desempeño de sus equipos y esperan que el trabajo realizado en la pretemporada se refleje en el éxito en los torneos futuros.",
+      "tags": ["ENTRENAMIENTO", "PRETEMPORADA", "VOLEIBOL", "COCHABAMBA"]
+    },
+    {
+      "image": "/noti6.jpeg",
+      "date": "1 DE MARZO DE 2024",
+      "title": "NUEVAS REGLAS DE LA FIVB PARA EL VOLEIBOL DE PLAYA: IMPACTO EN COCHABAMBA",
+      "description": "La Federación Internacional de Voleibol (FIVB) ha anunciado nuevas reglas para el voleibol de playa que entrarán en vigencia la próxima temporada. Las modificaciones incluyen cambios en el formato de puntuación y la duración de los sets. En Cochabamba, estos cambios son esperados con interés por la comunidad local, que se prepara para adaptarse a las nuevas normativas y continuar promoviendo el voleibol de playa.",
+      "tags": ["FIVB", "VOLEIBOL DE PLAYA", "REGLAS", "COCHABAMBA"]
+    }
+  ]
+}
