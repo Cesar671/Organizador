@@ -6,3 +6,4 @@ npm install react-router-dom
 
 dependencias 2
 npm install @mui/x-data-grid
+npm install bootstrap
