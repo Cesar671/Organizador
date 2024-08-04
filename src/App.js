@@ -10,7 +10,7 @@ import TablaPosiciones from './pages/TablaPosiciones';
 import PartidosDelDia from './pages/PartidosDelDia/PartidosDelDia';
 import Jugadores from './pages/Jugadores';
 import Reglamento from './pages/Reglamento';
-import Noticias from './pages/Noticias';
+import Noticias from './pages/Noti/Noticias';
 import { RolPartidos2 } from './pages/rolPartidos/RolPartidos2';
 import { VerRolPartidos } from './pages/rolPartidos/VerRolPartidos';
 import { EquipoVs } from './pages/rolPartidos/EquipoVs';
