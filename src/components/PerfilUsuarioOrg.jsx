@@ -1,8 +1,13 @@
 import { Box, useTheme } from '@mui/material'
-import React, { useState } from 'react'
-import { Edit, SaveAs  } from '@mui/icons-material'
+import React, { useContext, useEffect, useState } from 'react'
+import { Edit, SaveAs, Warning, Close  } from '@mui/icons-material'
+import ModalCustom from './ModalIcon'
+import ConfirmDialog from './ConfirmDialog'
+import { FullDataCtxt } from '../global/contexts/equipContext'
 
-const PerfilUsuarioOrg = ({params}) => {
+const PerfilUsuarioOrg = ({params, close}) => {
+    const { jugadoresN, setJugadores } = useContext(FullDataCtxt)
+
     const theme = useTheme()
     const [editMode, setEditMode] = useState(false);
     const [nombre, setNombre] = useState(params.nombre)
@@ -11,18 +16,38 @@ const PerfilUsuarioOrg = ({params}) => {
     const [genero, setGenero] = useState(params.genero)
     const [date, setDate] = useState(params.fechaNacimiento)
     const [posicion, setPosicion] = useState(params.posicion)
+    const [response, setResponse] = useState(false)
 
-    const handleNombre = (e) => setNombre(e.value)
-    const handleCi = (e) => setCi(e.value)
-    const handleCelular = (e) => setCelular(e.value)
-    const handleGenero = (e) => setGenero(e.value)
-    const handleDate = (e) => setDate(e.value)
-    const handlePosicion = (e) => setPosicion(e.value)
+    const handleNombre = (e) => setNombre(e.target.value)
+    const handleCi = (e) => setCi(e.target.value)
+    const handleCelular = (e) => setCelular(e.target.value)
+    const handleGenero = (e) => setGenero(e.target.value)
+    const handleDate = (e) => setDate(e.target.value)
+    const handlePosicion = (e) => setPosicion(e.target.value)
 
     const handleChangeMode = () =>{
         setEditMode(!editMode)
-        console.log(editMode)
     }
+
+    useEffect(() => {
+
+        if(response){
+            const data = Object.values(jugadoresN)
+            const newData = data.map( jugador => 
+                                jugador.id == params.id ? { ...jugador, 
+                                    nombre: nombre,
+                                    carnetIdentidad: ci,
+                                    numeroCelular: celular,
+                                    genero: genero,
+                                    fechaNacimiento: date,
+                                    posicion: posicion
+                                }:jugador)
+            setJugadores( newData)
+            handleChangeMode()
+            setResponse(false)
+        }
+    },[response])
+
   return (
     <Box
         sx={{
@@ -65,19 +90,31 @@ const PerfilUsuarioOrg = ({params}) => {
                 alignItems: "end"
             }}
         >
+            <Close onClick = { close }/>
             <Box
 
                 sx={{
-                    width:"200px",
+                    width:"170px",
+                    height:"170px",
                     borderRadius:"100px",
                     overflow:"hidden",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems:"center",
                 }}
                 
             >
                 <img style={{width:"100%", objectFit:"cover" }} src={'../'+params.image}/>
             </Box>
             
-               {(!editMode) ? <Edit onClick = { handleChangeMode }/> : <SaveAs />} 
+               {(!editMode) ? <Edit 
+                                onClick = { handleChangeMode }/> : <ModalCustom 
+                                                                            Component={ ConfirmDialog } 
+                                                                            Icon={ SaveAs } 
+                                                                            text = { "¿Está seguro de guardar los cambios?" }
+                                                                            response={ response }
+                                                                            setResponse = { setResponse }
+                                                                                    />} 
         </Box>
     </Box>
   )

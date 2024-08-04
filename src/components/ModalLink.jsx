@@ -25,7 +25,6 @@ const ModalCustom = ({ Component, nameButton, params }) => {
         </Box>
         <Modal
                 open={open}
-                onClose={handleClose}
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
             >
@@ -36,7 +35,7 @@ const ModalCustom = ({ Component, nameButton, params }) => {
                         transform: 'translate(-50%, -50%)',
                 }}        
                 >
-                    <Component params = { params }/>
+                    <Component params = { params } close = { handleClose } />
                 </Box>
             </Modal>
   </>

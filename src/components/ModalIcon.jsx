@@ -1,31 +1,26 @@
 import React, { useState } from 'react'
 import { Modal } from '@mui/material';
-import { Box, Button, useTheme } from '@mui/material'
+import { Box, useTheme } from '@mui/material'
 
-const ModalCustom = ({ Component, nameButton, Icon, setResponse, text }) => {
+const ModalCustom = ({ Component, text, response, Icon, setResponse  }) => {
   const [open, setOpen] = useState(false);
   const theme = useTheme()
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   return (<>
-        <Button
-            variant="contained" 
+        <Icon
             color="primary" 
-            onClick={handleOpen} 
-            Icon={ Icon }
+            onClick={ handleOpen } 
             sx={{
-                color: theme.palette.secondary.main,
-                backgroundColor: theme.palette.primary.main,
-                padding: "10px",
+                alignContent: "center",
+                textDecoration:"underline",
+                color: "#0000FF",
                 "&:hover":{
                     color: theme.palette.primary.main,
-                    backgroundColor: theme.palette.secondary.main
                 }
             }}
-            startIcon = { <Icon /> }
-        >
-            { nameButton }
-        </Button>
+        />
+
         <Modal
                 open={open}
                 aria-labelledby="modal-modal-title"
@@ -38,7 +33,7 @@ const ModalCustom = ({ Component, nameButton, Icon, setResponse, text }) => {
                         transform: 'translate(-50%, -50%)',
                 }}        
                 >
-                    <Component close = { handleClose } text = { (text) && text } setResponse = { (setResponse) && setResponse }/>
+                    <Component text = { text } setResponse = { setResponse } close = { handleClose }/>
                 </Box>
             </Modal>
   </>
